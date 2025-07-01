@@ -7,7 +7,7 @@ public class TorneoCasual : Torneo
         return $"Nombre: {Nombre} - Fecha: {Fecha} - Lugar de Transmisión: {LugarDeTransmisión} - Limite de Equipos: {LimiteEquipos}";
     }
 
-    public string InscribirEquipoConLimite(string Equipo)
+    public string InscribirEquipoConLimite(Equipo Equipo)
     {
         if (EquiposRegistrados.Count < LimiteEquipos)
         {

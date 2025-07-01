@@ -1,23 +1,50 @@
 ﻿using System.ComponentModel;
 
-int N;
-    List<Torneo> ListaDeTorneos = new List<Torneo>();
+List<Torneo> ListaDeTorneos = new List<Torneo>();
+Console.WriteLine("Elija una de las opciones porfavor :D");
+Console.WriteLine("0 - Salir | 1 - Crear Torneo | 2 - Listar Torneos | 3 - Buscar Torneo | 4 - Inscribir Equipo");
+Console.WriteLine();
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine();
+while (n != 0)
+{
+    switch (n)
+    {
+        case 1:
+            CrearTorneo();
+            break;
+        case 2:
+            ListarTorneos();
+            break;
+        case 3:
+            BuscarTorneo();
+            break;
+        case 4:
+            InscribirEquipos();
+            break;
+        default:
+            Console.WriteLine("Ese no es un numero valido ._.");
+            break;
+    }
+    Console.WriteLine();
     Console.WriteLine("Elija una de las opciones porfavor :D");
     Console.WriteLine("0 - Salir | 1 - Crear Torneo | 2 - Listar Torneos | 3 - Buscar Torneo | 4 - Inscribir Equipo");
     Console.WriteLine();
-    N = int.Parse(Console.ReadLine());
+    n = int.Parse(Console.ReadLine());
     Console.WriteLine();
-while (N != 0)
-{
-    void CrearTorneo()
+}
+Console.WriteLine("Nos vemos ^_^");
+Console.ReadKey();
+
+void CrearTorneo()
     {
-        N = 0;
+        n = 0;
         Console.WriteLine("Elija el tipo de torneo :)");
         Console.WriteLine("1 - Torneo Competitivo | 2 - Torneo Casual");
         Console.WriteLine();
-        N = int.Parse(Console.ReadLine());
+        n = int.Parse(Console.ReadLine());
         Console.WriteLine();
-        if (N == 1)
+        if (n == 1)
         {
             TorneoCompetitivo TorneoCompetitivo = new TorneoCompetitivo();
             Console.WriteLine("Ingrese nombre del torneo:");
@@ -33,7 +60,7 @@ while (N != 0)
             TorneoCompetitivo.Premio = Console.ReadLine();
             ListaDeTorneos.Add(TorneoCompetitivo);
         }
-        else if (N == 2)
+        else if (n == 2)
         {
             TorneoCasual TorneoCasual = new TorneoCasual();
             Console.WriteLine("Ingrese nombre del torneo:");
@@ -126,31 +153,3 @@ while (N != 0)
             Console.WriteLine("Ese torneo no existe ._.");
         }
     }
-
-    switch (N)
-    {
-        case 1:
-            CrearTorneo();
-            break;
-        case 2:
-            ListarTorneos();
-            break;
-        case 3:
-            BuscarTorneo();
-            break;
-        case 4:
-            InscribirEquipos();
-            break;
-        default:
-            Console.WriteLine("Ese no es un numero valido ._.");
-            break;
-    }
-    Console.WriteLine();
-    Console.WriteLine("Elija una de las opciones porfavor :D");
-    Console.WriteLine("0 - Salir | 1 - Crear Torneo | 2 - Listar Torneos | 3 - Buscar Torneo | 4 - Inscribir Equipo");
-    Console.WriteLine();
-    N = int.Parse(Console.ReadLine());
-    Console.WriteLine();
-}
-Console.WriteLine("Nos vemos ^_^");
-Console.ReadKey();

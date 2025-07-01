@@ -1,4 +1,4 @@
-public class Equipo : Torneo
+public class Equipo
 {
     public string Nombre { get; set; }
 
